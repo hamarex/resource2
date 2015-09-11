@@ -12,7 +12,11 @@
 ```
 
 ## ディレクトリへ設置
-/home/node へ一式を展開
+/home/node へ一式を展開(ディレクトリは任意の位置で構わない)
+```
+/home/node/resource2.js
+/home/node/node_modules
+```
 
 
 ## /etc/init.d/resource2を設置してdaemonで起動する。
@@ -41,10 +45,6 @@ lockfile=${LOCKFILE-/var/lock/subsys/resource2}
 RETVAL=0
 STOP_TIMEOUT=${STOP_TIMEOUT-10}
 
-# The semantics of these two functions differ from the way apachectl does
-# things -- attempting to start while running is a failure, and shutdown
-# when not running is also a failure.  So we just do it the way init scripts
-# are expected to behave here.
 start() {
         echo -n $"Starting $prog: "
         $node /home/node/resource2.js &
