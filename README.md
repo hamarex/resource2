@@ -1,6 +1,9 @@
 # resource2
+node.js からwebsocket経由でlocalportへ接続したきたソケットへデータを流し込む。
+結果を描画するにはhuginnが必要。
+linux でのみ稼働確認済
 
-## ウォッチ対象のserverへnode.jsをインストール
+## ウォッチ対象の機器へnode.jsをインストール
 ```
 #cd /usr/local/src
 #tar xvzf node-v0.8.9.tar.gz
